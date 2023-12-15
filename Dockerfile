@@ -31,4 +31,4 @@ WORKDIR /custom_apps
 ARG GITHUB_TOKEN
 
 # Clone the private repo
-RUN git clone https://<token>:x-oauth-basic@github.com/clay3075/zeus_crm_api.git
+RUN git clone https://$GITHUB_TOKEN:x-oauth-basic@github.com/clay3075/zeus_crm_api.git
