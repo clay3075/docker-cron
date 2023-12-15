@@ -6,6 +6,7 @@ RUN apt-get update \
     curl \
     python3 \
     python3-pip \
+    git \
     # Remove package lists for smaller image sizes
     && rm -rf /var/lib/apt/lists/* \
     && which cron \
@@ -23,3 +24,11 @@ ENTRYPOINT ["/entrypoint.sh"]
 # -f | Stay in foreground mode, don't daemonize.
 # -L loglevel | Tell  cron  what to log about jobs (errors are logged regardless of this value) as the sum of the following values:
 CMD ["cron","-f", "-L", "2"]
+
+WORKDIR /custom_apps
+
+# Argument for the token
+ARG GITHUB_TOKEN
+
+# Clone the private repo
+RUN git clone https://<token>:x-oauth-basic@github.com/clay3075/zeus_crm_api.git
