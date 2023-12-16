@@ -7,6 +7,7 @@ RUN apt-get update \
     python3 \
     python3-pip \
     git \
+    vim \
     # Remove package lists for smaller image sizes
     && rm -rf /var/lib/apt/lists/* \
     && which cron \
