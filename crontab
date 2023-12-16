@@ -1,5 +1,5 @@
-* * * * * /usr/bin/python3 /custom_apps/zeus_crm_api/process_file_uploads.py
-* * * * * echo "Hello, this is a cron job running every minute" >> /custom_apps/zeus_crm_api/test.log
+* * * * * /usr/bin/python3 /custom_apps/zeus_crm_api/process_file_uploads.py >> /custom_apps/zeus_crm_api/process_file_uploads.log 2>&1
+# * * * * * echo "Hello, this is a cron job running every minute" >> /custom_apps/zeus_crm_api/test.log
 
 
 # An empty line is required at the end of this file for a valid cron file.
